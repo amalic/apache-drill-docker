@@ -2,7 +2,7 @@
 #
 # VERSION 0.1 - not for production, use at own risk
 # General instructions: https://drill.apache.org/docs/install-drill-introduction/
-# 
+#
 
 
 #
@@ -23,8 +23,8 @@ RUN yum install -y tar java-1.8.0-openjdk-devel && \
 # Download and Install Apache Drill
 # https://drill.apache.org/docs/installing-drill-on-linux-and-mac-os-x/
 #
-RUN curl -o apache-drill-1.6.0.tar.gz http://apache.cs.uu.nl/drill/drill-1.6.0/apache-drill-1.6.0.tar.gz && \
-    tar zxpf apache-drill-1.6.0.tar.gz -C /opt/drill
+RUN curl -o apache-drill-1.6.0.tar.gz https://archive.apache.org/dist/drill/drill-1.6.0/apache-drill-1.6.0.tar.gz && \
+   tar zxpf apache-drill-1.6.0.tar.gz -C /opt/drill
 
 #
 # Start Apache Drill in embedded mode
@@ -36,7 +36,8 @@ RUN chown root:root /drill-scripts/bootstrap.sh && \
 ENV BOOTSTRAP /drill-scripts/bootstrap.sh
 
 #
-# Expose the Apache Drill Web UI 
+# Expose the Apache Drill Web UI
 # https://drill.apache.org/docs/storage-plugin-registration/
 #
 EXPOSE 8047
+EXPOSE 31010
